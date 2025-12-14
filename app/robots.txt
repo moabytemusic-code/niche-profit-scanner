@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://niche-profit-scanner.vercel.app/sitemap.xml
