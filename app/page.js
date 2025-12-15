@@ -1,7 +1,7 @@
 
 "use client";
 import { useState } from 'react';
-import { Search, Lock, Zap, Gauge, DollarSign, TrendingUp, Users, HelpCircle, X } from 'lucide-react';
+import { Search, Lock, Zap, Gauge, DollarSign, TrendingUp, Users, CircleHelp, X } from 'lucide-react';
 import './globals.css';
 
 export default function Home() {
@@ -165,7 +165,7 @@ export default function Home() {
                 onClick={() => setShowHelp(true)}
                 className="fixed top-4 right-4 text-slate-400 hover:text-white transition flex items-center gap-2"
             >
-                <span className="font-bold text-sm">How To Use</span> <HelpCircle size={24} />
+                <span className="font-bold text-sm">How To Use</span> <CircleHelp size={24} />
             </button>
 
             {/* Help Modal */}
