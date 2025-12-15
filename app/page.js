@@ -1,11 +1,12 @@
 
 "use client";
 import { useState } from 'react';
-import { Search, Lock, Zap, Gauge, DollarSign, TrendingUp, Users } from 'lucide-react';
+import { Search, Lock, Zap, Gauge, DollarSign, TrendingUp, Users, HelpCircle, X } from 'lucide-react';
 import './globals.css';
 
 export default function Home() {
     const [step, setStep] = useState('input');
+    const [showHelp, setShowHelp] = useState(false);
     const [loading, setLoading] = useState(false);
     const [niche, setNiche] = useState('');
     const [platform, setPlatform] = useState('YouTube');
@@ -159,6 +160,48 @@ export default function Home() {
                 )}
 
             </div>
-        </main>
+            {/* Help Button */}
+            <button
+                onClick={() => setShowHelp(true)}
+                className="fixed top-4 right-4 text-slate-400 hover:text-white transition"
+            >
+                <HelpCircle size={24} />
+            </button>
+
+            {/* Help Modal */}
+            {showHelp && (
+                <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+                    <div className="bg-slate-800 p-6 rounded-xl max-w-sm w-full relative border border-slate-600">
+                        <button
+                            onClick={() => setShowHelp(false)}
+                            className="absolute top-4 right-4 text-slate-400 hover:text-white"
+                        >
+                            <X size={24} />
+                        </button>
+
+                        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <Zap size={24} className="text-accent" /> How it Works
+                        </h3>
+
+                        <div className="space-y-4">
+                            <div className="flex gap-4">
+                                <div className="bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-accent shrink-0">1</div>
+                                <div><strong className="text-white block">Pick a Niche</strong><p className="text-slate-400 text-sm">Type a topic (e.g. "Crypto") & Platform.</p></div>
+                            </div>
+                            <div className="flex gap-4">
+                                <div className="bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-accent shrink-0">2</div>
+                                <div><strong className="text-white block">Get Scored</strong><p className="text-slate-400 text-sm">See Demand, Competition & Profit scores.</p></div>
+                            </div>
+                            <div className="flex gap-4">
+                                <div className="bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-accent shrink-0">3</div>
+                                <div><strong className="text-white block">Unlock Strategy</strong><p className="text-slate-400 text-sm">Get 10+ Viral Ideas & Product list.</p></div>
+                            </div>
+                        </div>
+
+                        <button onClick={() => setShowHelp(false)} className="btn-primary mt-6 w-full py-2">Got it</button>
+                    </div>
+                </div>
+            )}
+        </main >
     );
 }
