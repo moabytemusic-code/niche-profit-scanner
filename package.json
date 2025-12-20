@@ -9,10 +9,14 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "clsx": "^2.1.1",
+        "dotenv": "^17.2.3",
+        "framer-motion": "^12.23.26",
+        "lucide-react": "^0.370.0",
+        "next": "14.2.20",
+        "openai": "^4.28.0",
         "react": "^18",
         "react-dom": "^18",
-        "next": "14.2.20",
-        "lucide-react": "^0.370.0",
-        "openai": "^4.28.0"
+        "tailwind-merge": "^3.4.0"
     }
 }
